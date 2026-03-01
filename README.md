@@ -1,5 +1,7 @@
 # Money Lover Transaction Export (Python)
 
+Disclaimer: All code in this repository was written by AI and was heavily inspired by https://github.com/allexxis/moneylover-client.
+
 This repo contains a Python script that exports transaction data from Money Lover into a JSON file.
 
 Implementation is based on the API flow used in:
