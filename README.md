@@ -2,7 +2,7 @@
 
 > Disclaimer: All code in this repository was written by AI
 
-This repo contains a Python script that exports transaction data from Money Lover into a JSON file.
+This repo contains a Python script that exports transaction data from Money Lover into JSON or CSV.
 
 Small note: README tweak made via OpenClaw assistant for a test commit.
 
@@ -28,13 +28,14 @@ Provide the token in one of these ways:
 - `--token "<access token>"`
 - `.env` file with `MONEYLOVER_TOKEN=...`
 
-### Export transactions
+### Export transactions (JSON)
 
 ```bash
-python export_moneylover_transactions.py \
+python export_moneylover.py \
   --token "<AuthJWT token>" \
   --start-date "2026-01-01" \
   --end-date "2026-01-31" \
+  --format json \
   --output "exports/january-2026.json"
 ```
 
@@ -42,9 +43,10 @@ With env var:
 
 ```bash
 export MONEYLOVER_TOKEN="<AuthJWT token>"
-python export_moneylover_transactions.py \
+python export_moneylover.py \
   --start-date "2026-01-01" \
   --end-date "2026-01-31" \
+  --format json \
   --output "exports/january-2026.json"
 ```
 
@@ -72,10 +74,23 @@ python export_moneylover_transactions.py \
   --wallet-id "<wallet_id>"
 ```
 
+### Export transactions (CSV)
+
+```bash
+python export_moneylover.py \
+  --token "<AuthJWT token>" \
+  --start-date "2026-01-01" \
+  --end-date "2026-01-31" \
+  --format csv \
+  --output "exports/january-2026.csv"
+```
+
+For CSV exports, nested fields like `category` and `campaign` are written as their `.name` value.
+
 ### List wallets
 
 ```bash
-python export_moneylover_transactions.py --token "<AuthJWT token>" --start-date "2026-01-01" --end-date "2026-01-31" --list-wallets
+python export_moneylover.py --token "<AuthJWT token>" --start-date "2026-01-01" --end-date "2026-01-31" --list-wallets
 ```
 
 ### How to get the access token with Google SSO
