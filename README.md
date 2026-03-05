@@ -4,6 +4,8 @@
 
 This repo contains a Python script that exports transaction data from Money Lover into a JSON file.
 
+Small note: README tweak made via OpenClaw assistant for a test commit.
+
 Implementation is based on the API flow used in:
 - https://github.com/allexxis/moneylover-client
 
