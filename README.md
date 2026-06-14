@@ -10,12 +10,12 @@ Implementation is based on the API flow used in:
 ## Script
 
 - Python: 3.9+
-- Dependencies: `rich`, `requests`
+- Dependencies: `rich`, `requests`, `python-dotenv`
 
 Install dependency:
 
 ```bash
-python -m pip install rich requests
+python -m pip install rich requests python-dotenv
 ```
 
 ## Usage
@@ -29,7 +29,7 @@ Provide the token in one of these ways:
 ### Export transactions
 
 ```bash
-python export_moneylover_transactions.py \
+python export_moneylover.py \
   --token "<AuthJWT token>" \
   --start-date "2026-01-01" \
   --end-date "2026-01-31" \
@@ -40,7 +40,7 @@ With env var:
 
 ```bash
 export MONEYLOVER_TOKEN="<AuthJWT token>"
-python export_moneylover_transactions.py \
+python export_moneylover.py \
   --start-date "2026-01-01" \
   --end-date "2026-01-31" \
   --output "exports/january-2026.json"
@@ -53,7 +53,7 @@ If `--start-date` and `--end-date` are omitted, the script exports all transacti
 By wallet name:
 
 ```bash
-python export_moneylover_transactions.py \
+python export_moneylover.py \
   --token "<AuthJWT token>" \
   --start-date "2026-01-01" \
   --end-date "2026-01-31" \
@@ -63,7 +63,7 @@ python export_moneylover_transactions.py \
 By wallet ID:
 
 ```bash
-python export_moneylover_transactions.py \
+python export_moneylover.py \
   --token "<AuthJWT token>" \
   --start-date "2026-01-01" \
   --end-date "2026-01-31" \
@@ -73,7 +73,7 @@ python export_moneylover_transactions.py \
 ### List wallets
 
 ```bash
-python export_moneylover_transactions.py --token "<AuthJWT token>" --start-date "2026-01-01" --end-date "2026-01-31" --list-wallets
+python export_moneylover.py --token "<AuthJWT token>" --start-date "2026-01-01" --end-date "2026-01-31" --list-wallets
 ```
 
 ### How to get the access token with Google SSO
